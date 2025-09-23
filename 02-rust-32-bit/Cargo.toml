@@ -1,0 +1,18 @@
+[package]
+name = "kernel"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+
+[dependencies]
+anyhow = { version = "1.0", default-features = false }
+log = { version = "0.4", default-features = false }
+heapless = { version = "0.9", default-features = false }
+pci-ids = { version = "0.2", default-features = false }
+pci_types = { version = "0.10", default-features = false }
+x86 = { version = "0.52", default-features = false }

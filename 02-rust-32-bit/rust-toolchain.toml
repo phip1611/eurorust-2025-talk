@@ -1,0 +1,18 @@
+# rust-toolchain for rustup
+# https://rust-lang.github.io/rustup/overrides.html
+
+# targets and components are additive to the systems default values
+[toolchain]
+# rustc 1.91 - nightly needed for the build-std feature
+channel = "nightly-2025-09-07"
+profile = "minimal"
+components = [
+  "cargo",
+  "clippy",
+  #"miri",
+  # for build-std feature
+  "rust-src",
+  "rust-std",
+  "rustc",
+  "rustfmt",
+]
