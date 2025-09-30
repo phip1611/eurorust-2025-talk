@@ -27,8 +27,7 @@ start:
     mov     $stack_end, %ebp
 
     # x86 (i386) calling convention:
-    # 1. prepare stackframe pointer
-    # 2. push arguments on stack in reverse order
+    # push arguments on stack in reverse order
     push    %ebx # 2nd parameter
     push    %eax # 1st parameter
     call    rust_entry

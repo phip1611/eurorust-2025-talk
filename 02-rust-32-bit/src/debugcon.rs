@@ -5,12 +5,12 @@ use log::{LevelFilter, Log, Metadata, Record};
 
 static LOGGER: DebugconLogger = DebugconLogger;
 
-struct Debugcon;
-
 /// Internal API for the `println!` macro.
 pub fn _print(args: Arguments) {
     Debugcon.write_fmt(args).unwrap();
 }
+
+struct Debugcon;
 
 impl Debugcon {
     /// I/O port of QEMUs debugcon device on x86.
@@ -28,7 +28,7 @@ impl Debugcon {
     }
 }
 
-impl Write for Debugcon {
+impl core::fmt::Write for Debugcon {
     fn write_str(&mut self, s: &str) -> core::fmt::Result {
         for &byte in s.as_bytes() {
             Debugcon::write_byte(byte);
