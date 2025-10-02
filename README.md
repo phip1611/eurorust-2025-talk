@@ -2,7 +2,7 @@
 
 This repository shows practical code examples for
 [my EuroRust talk 2025](https://eurorust.eu/talks/a-minimal-rust-kernel/) in
-Paris.
+Paris. The [Slides](https://eurorust-2025.slides.phip1611.dev/) are at another location.
 
 The talk and the examples focuses on x86 space only.
 
