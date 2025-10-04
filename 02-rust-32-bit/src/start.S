@@ -1,4 +1,6 @@
 # GNU Assembler Syntax (GAS) with AT&T Assembly Flavor
+#
+# This is understood by LLVM.
 
 # Symbol from Rust
 .extern rust_entry
@@ -26,8 +28,14 @@ start:
     mov     $stack_end, %esp
     mov     $stack_end, %ebp
 
+    # Pass some parameters to the kernel
+    mov     $0x42  , %eax
+    mov     $0x1337, %ebx
+    mov     $0xc0ffee, %ecx
+
     # x86 (i386) calling convention:
     # push arguments on stack in reverse order
+    push    %ecx # 3rd parameter
     push    %ebx # 2nd parameter
     push    %eax # 1st parameter
     call    rust_entry

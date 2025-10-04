@@ -17,8 +17,8 @@ use log::{debug, error, info};
 
 /// Entry into the Rust code.
 #[unsafe(no_mangle)]
-extern "C" fn rust_entry(multiboot_magic: u32, multiboot_hdr: u32) -> ! {
-    main(multiboot_magic, multiboot_hdr).expect("Should run kernel");
+extern "C" fn rust_entry(arg0: u32, arg1: u32, arg2: u32) -> ! {
+    main(arg0, arg1, arg2).expect("Should run kernel");
     unreachable!();
 }
 
@@ -32,9 +32,9 @@ fn exit_qemu() -> ! {
 }
 
 /// Executes the kernel's main logic.
-fn main(multiboot_magic: u32, multiboot_hdr: u32) -> anyhow::Result<()> {
+fn main(arg0: u32, arg1: u32, arg2: u32) -> anyhow::Result<()> {
     init_environment()?;
-    debug!("multiboot_hdr=0x{multiboot_hdr:x?}, multiboot_magic=0x{multiboot_magic:x?}");
+    debug!("arg0={arg0:#x?}, arg1={arg1:#x?}, arg2={arg2:#x?}");
 
     println!(
         "println works too, wow! {ansi_begin}Even with colors!{ansi_end}",
