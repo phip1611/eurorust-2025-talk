@@ -3,8 +3,8 @@
 
 # targets and components are additive to the systems default values
 [toolchain]
-# rustc 1.91 - nightly needed for the build-std feature
-channel = "nightly-2025-09-07"
+# rustc 1.92 - nightly needed for the build-std feature
+channel = "nightly-2025-10-04"
 profile = "minimal"
 components = [
   "cargo",

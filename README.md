@@ -2,9 +2,10 @@
 
 This repository shows practical code examples for
 [my EuroRust talk 2025](https://eurorust.eu/talks/a-minimal-rust-kernel/) in
-Paris. The [Slides](https://eurorust-2025.slides.phip1611.dev/) are at another location.
+Paris. The slides are available at <https://eurorust-2025.slides.phip1611.dev>.
 
-The talk and the examples focuses on x86 space only.
+The talk and the examples focuses on x86 only. To output data, they use the
+"debugcon" device. This is available in QEMU and Cloud Hypervisor.
 
 ## Structure
 
