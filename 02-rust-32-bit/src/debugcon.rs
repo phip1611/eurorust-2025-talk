@@ -1,7 +1,7 @@
 //! Driver for QEMU's debugcon device.
 
 use core::fmt::{Arguments, Write};
-use log::{LevelFilter, Log, Metadata, Record};
+use log::{LevelFilter, Log, Metadata, Record, info};
 
 static LOGGER: DebugconLogger = DebugconLogger;
 
@@ -44,6 +44,7 @@ impl DebugconLogger {
         // Ignore, as we can't do anything about it here.
         let _ = log::set_logger(&LOGGER);
         log::set_max_level(LevelFilter::Trace);
+        info!("Logger initialized!");
     }
 }
 

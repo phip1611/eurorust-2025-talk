@@ -13,7 +13,7 @@ mod heap;
 mod pci;
 
 use core::panic::PanicInfo;
-use log::{debug, error, info};
+use log::{debug, error};
 
 /// Entry into the Rust code.
 #[unsafe(no_mangle)]
@@ -55,7 +55,7 @@ fn main(arg0: u32, arg1: u32, arg2: u32) -> anyhow::Result<()> {
 /// Initializes the environment.
 fn init_environment() -> anyhow::Result<()> {
     debugcon::DebugconLogger::init();
-    info!("Logger initialized!");
+    heap::init();
     Ok(())
 }
 

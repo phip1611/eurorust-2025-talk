@@ -11,8 +11,10 @@ opt-level = "s"
 
 [dependencies]
 anyhow = { version = "1.0", default-features = false }
-log = { version = "0.4", default-features = false }
 heapless = { version = "0.9", default-features = false }
+log = { version = "0.4", default-features = false }
 pci-ids = { version = "0.2", default-features = false }
 pci_types = { version = "0.10", default-features = false }
+spin = { version = "0.10.0", default-features = false, features = ["spin_mutex"]}
+talc = { version = "4.4.3", default-features = false, features = ["lock_api"] }
 x86 = { version = "0.52", default-features = false }
